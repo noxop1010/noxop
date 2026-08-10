@@ -1,1 +1,1 @@
-NOXGAMES V7 Hardware Lab. CPU/GPU catalogs, same-category comparison, normalized scores and clearly labeled reference FPS estimates.
+NOXGAMES V8: game-first homepage. Hardware lab, CPU/GPU comparisons and FPS tools are moved behind the ••• menu and remain available on hardware.html.
