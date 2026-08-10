@@ -1,1 +1,1 @@
-NOXGAMES V8: game-first homepage. Hardware lab, CPU/GPU comparisons and FPS tools are moved behind the ••• menu and remain available on hardware.html.
+V11 adds a System Requirements section to every game detail page. Verified Steam requirements are included for major games in the database; games not yet verified link directly to their official store requirements instead of inventing specifications.
