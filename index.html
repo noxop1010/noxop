@@ -1,63 +1,113 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="NOXGAMES — game finder, PC build finder, hardware database, comparisons and upgrade tools.">
-<title>NOXGAMES — Gaming & PC Hardware Hub</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="NOXGAMES — discover games, build PCs and make smarter hardware choices.">
+<title>NOXGAMES — Games. Builds. Hardware.</title>
 <link rel="stylesheet" href="styles.css">
-</head><body>
-<header><div class="nav">
-<a class="logo" href="#home">🎮 NOX<span>GAMES</span></a>
-<button id="menu">☰</button>
-<nav id="nav"><a href="#home">Home</a><a href="#finder">Game Finder</a><a href="#builds">Builds</a><a href="#hardware">Hardware</a><a href="#compare">Compare</a><a href="#guides">Guides</a></nav>
-</div></header>
+</head>
+<body>
+<header class="header">
+  <div class="nav wrap">
+    <a class="brand" href="#home"><span class="brand-mark">N</span><span>NOX<span class="accent">GAMES</span></span></a>
+    <nav id="nav">
+      <a href="#games">Games</a>
+      <a href="#builds">PC Builds</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#guides">Guides</a>
+    </nav>
+    <a class="nav-cta" href="#games">Explore</a>
+    <button id="menu" aria-label="Menu">☰</button>
+  </div>
+</header>
 
-<section class="hero" id="home"><div class="hero-copy">
-<small>GAMES • BUILDS • HARDWARE</small><h1>Make better <b>gaming</b> decisions.</h1>
-<p>Find games for your PC, build around your budget, compare hardware and plan your next upgrade.</p>
-<a class="button" href="#finder">Game Finder</a> <a class="button ghost" href="#builds">Build Finder</a>
-</div><div class="hero-art">🖥️</div></section>
+<main id="home">
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow"><i></i> THE GAMING DECISION HUB</div>
+      <h1>PLAY MORE.<br><span>GUESS LESS.</span></h1>
+      <p>Find games that fit your PC, build the right system for your budget, and know what hardware upgrade actually matters.</p>
+      <div class="hero-actions">
+        <a class="primary" href="#games">Find a game <b>→</b></a>
+        <a class="secondary" href="#builds">Build my PC</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orb"></div>
+      <div class="monitor">
+        <div class="screen"><span>NOX</span><strong>GAMES</strong><small>FIND • BUILD • PLAY</small></div>
+      </div>
+      <div class="float-card card-a"><small>GPU</small><b>RTX 5070</b><span>1440p ready</span></div>
+      <div class="float-card card-b"><small>BUILD</small><b>₹50K</b><span>1080p sweet spot</span></div>
+    </div>
+  </div>
+</section>
 
-<section class="stats"><div><b>🎮 40+</b><small>Games in database</small></div><div><b>⚙️ 18+</b><small>Hardware entries</small></div><div><b>🖥️ 6</b><small>Starter builds</small></div><div><b>🔎 4</b><small>Core tools</small></div></section>
+<section class="quick wrap">
+  <a href="#games"><span>01</span><b>GAME FINDER</b><small>What should I play?</small><em>↗</em></a>
+  <a href="#builds"><span>02</span><b>PC BUILDS</b><small>What should I build?</small><em>↗</em></a>
+  <a href="#hardware"><span>03</span><b>HARDWARE</b><small>What should I buy?</small><em>↗</em></a>
+</section>
 
-<section class="tool" id="finder"><small>GAME DATABASE</small><h2>🎮 Game Finder</h2><p>Filter the database by genre, style and your PC's memory/GPU level.</p>
-<div class="panel"><div class="fields">
-<label>Search<input id="gameSearch" placeholder="e.g. Elden Ring"></label>
-<label>Genre<select id="genre"><option>All</option><option>Action</option><option>RPG</option><option>Open World</option><option>Horror</option><option>Indie</option><option>Multiplayer</option><option>Racing</option></select></label>
-<label>Style<select id="style"><option>All</option><option>Story</option><option>Combat</option><option>Exploration</option><option>Co-op</option></select></label>
-<label>Your RAM<select id="ram"><option>4</option><option selected>8</option><option>16</option><option>32</option></select></label>
-<label>Your GPU<select id="gpu"><option>Low</option><option selected>Mid</option><option>High</option></select></label>
-</div><button class="button" id="findGames">Find Games</button><div id="gameResults"></div></div></section>
+<section class="section wrap" id="games">
+  <div class="section-head"><div><div class="eyebrow">01 / GAME FINDER</div><h2>Find your next <span>game.</span></h2></div><p>Filter by what you like and what your PC can handle.</p></div>
+  <div class="finder">
+    <div class="finder-top">
+      <label>Search game<input id="gameSearch" placeholder="Search titles..."></label>
+      <label>Genre<select id="genre"><option>All</option><option>Action</option><option>RPG</option><option>Horror</option><option>Indie</option><option>Multiplayer</option><option>Racing</option></select></label>
+      <label>Style<select id="style"><option>All</option><option>Story</option><option>Combat</option><option>Exploration</option><option>Co-op</option></select></label>
+      <label>RAM<select id="ram"><option>4</option><option selected>8</option><option>16</option><option>32</option></select></label>
+      <label>GPU<select id="gpu"><option>Low</option><option selected>Mid</option><option>High</option></select></label>
+      <button class="primary small" id="findGames">Find games</button>
+    </div>
+    <div id="gameResults" class="game-grid"></div>
+  </div>
+</section>
 
-<section class="tool" id="builds"><small>BUILD DATABASE</small><h2>🖥️ PC Build Finder</h2><p>Choose a budget and target resolution to get a sensible starting configuration.</p>
-<div class="panel"><div class="fields">
-<label>Budget<select id="budget"><option>₹35K</option><option selected>₹50K</option><option>₹65K</option><option>₹80K</option><option>₹1L</option><option>₹1.3L+</option></select></label>
-<label>Resolution<select id="resolution"><option>1080p</option><option selected>1440p</option><option>4K</option></select></label>
-<label>Use<select id="use"><option>Gaming</option><option>Gaming + Work</option><option>Streaming</option></select></label>
-</div><button class="button" id="findBuild">Generate Build</button><div id="buildResult"></div></div></section>
+<section class="section builds-section" id="builds">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">02 / PC BUILDS</div><h2>Build without <span>overspending.</span></h2></div><p>Starting configurations for common Indian gaming budgets.</p></div>
+    <div class="build-layout">
+      <div class="build-selector">
+        <div class="selector-title">YOUR TARGET</div>
+        <label>Budget<select id="budget"><option>₹35K</option><option selected>₹50K</option><option>₹65K</option><option>₹80K</option><option>₹1L</option><option>₹1.3L+</option></select></label>
+        <label>Resolution<select id="resolution"><option selected>1080p</option><option>1440p</option><option>4K</option></select></label>
+        <label>Use<select id="use"><option>Gaming</option><option>Gaming + Work</option><option>Streaming</option></select></label>
+        <button class="primary" id="findBuild">Generate build <b>→</b></button>
+      </div>
+      <div id="buildResult" class="build-result"></div>
+    </div>
+  </div>
+</section>
 
-<section class="tool" id="hardware"><small>HARDWARE DATABASE</small><h2>⚙️ Browse Hardware</h2><p>Search CPUs, GPUs, RAM and storage entries.</p>
-<div class="panel"><input class="wide" id="hardwareSearch" placeholder="Search hardware e.g. RTX 4060, Ryzen 5 5600"><div class="hardware-grid" id="hardwareResults"></div></div></section>
+<section class="section wrap" id="hardware">
+  <div class="section-head"><div><div class="eyebrow">03 / HARDWARE</div><h2>Know your <span>parts.</span></h2></div><p>Browse the starter hardware database.</p></div>
+  <div class="hardware-search"><input id="hardwareSearch" placeholder="Search CPU, GPU, RAM, SSD..."><span>⌕</span></div>
+  <div id="hardwareResults" class="hardware-grid"></div>
+</section>
 
-<section class="tool" id="compare"><small>COMPARISON TOOL</small><h2>🆚 Compare Hardware</h2><p>Pick two components from the database and get a simple comparison.</p>
-<div class="panel"><div class="fields two"><label>Part A<select id="partA"></select></label><label>Part B<select id="partB"></select></label></div><button class="button" id="compareBtn">Compare</button><div id="compareResult"></div></div></section>
+<section class="section wrap comparison-section">
+  <div class="section-head"><div><div class="eyebrow">04 / COMPARE</div><h2>Side-by-side. <span>No nonsense.</span></h2></div></div>
+  <div class="compare-box">
+    <div><label>Part A<select id="partA"></select></label><div class="vs">VS</div><label>Part B<select id="partB"></select></label><button class="primary" id="compareBtn">Compare</button></div>
+    <div id="compareResult"></div>
+  </div>
+</section>
 
-<section class="tool"><small>UPGRADE TOOL</small><h2>↗️ Upgrade Planner</h2><p>Tell NOXGAMES what you currently have and get a starting upgrade direction.</p>
-<div class="panel"><div class="fields">
-<label>Current GPU<select id="upGpu"><option>RX 6600</option><option>RTX 4060</option><option>RX 7600</option><option>RTX 4070 SUPER</option></select></label>
-<label>Current CPU<select id="upCpu"><option>Ryzen 5 5500</option><option>Ryzen 5 5600</option><option>Ryzen 5 7600</option><option>Core i5-12400F</option></select></label>
-<label>RAM<select id="upRam"><option>8GB</option><option selected>16GB</option><option>32GB</option></select></label>
-<label>Target<select id="target"><option>1080p High FPS</option><option>1440p</option><option>4K</option></select></label>
-</div><button class="button" id="upgradeBtn">Plan Upgrade</button><div id="upgradeResult"></div></div></section>
+<section class="section wrap" id="guides">
+  <div class="section-head"><div><div class="eyebrow">05 / GUIDES</div><h2>Useful, not <span>fluff.</span></h2></div></div>
+  <div class="guide-grid">
+    <article><span>BUILD</span><h3>Best Gaming PC Under ₹50,000</h3><p>Where your money should go for a balanced 1080p build.</p><a href="#">Read guide →</a></article>
+    <article><span>GPU</span><h3>Best GPU for Ryzen 5 5500</h3><p>How far you can upgrade before the CPU becomes a concern.</p><a href="#">Read guide →</a></article>
+    <article><span>RAM</span><h3>16GB vs 32GB RAM</h3><p>When more memory actually makes a difference.</p><a href="#">Read guide →</a></article>
+  </div>
+</section>
+</main>
 
-<section class="content" id="guides"><small>CONTENT HUB</small><h2>Guides to Build the Site Around</h2><div class="cards">
-<article><small>BUILD</small><h3>Best Gaming PC Under ₹50,000</h3><p>What to prioritize for a balanced 1080p machine.</p></article>
-<article><small>GPU</small><h3>Best GPU for Ryzen 5 5500</h3><p>How far you can upgrade before the CPU becomes the limiting factor.</p></article>
-<article><small>RAM</small><h3>16GB vs 32GB RAM</h3><p>When extra memory helps and when it does not.</p></article>
-<article><small>GAMES</small><h3>Best Games for 8GB RAM</h3><p>Good games for modest systems.</p></article>
-</div></section>
-
-<footer><div>© 2026 NOXGAMES</div><p>Recommendations are starting points. Verify current prices, specifications and compatibility before buying.</p>
-<a href="#">About</a> · <a href="#">Contact</a> · <a href="#">Privacy</a> · <a href="#">Disclaimer</a></footer>
+<footer><div class="wrap footer-inner"><div class="brand"><span class="brand-mark">N</span><span>NOX<span class="accent">GAMES</span></span></div><p>Games. Builds. Hardware.</p><div><a href="#">About</a><a href="#">Privacy</a><a href="#">Disclaimer</a></div></div></footer>
 <script>const GAMES=[["Elden Ring", "RPG", "Combat, Exploration", "12", "Mid", "Difficult combat, huge world, deep build variety."], ["Red Dead Redemption 2", "Action", "Story, Exploration", "12", "High", "Story-heavy open world with a detailed setting."], ["Cyberpunk 2077", "RPG", "Story, Exploration", "16", "High", "Open-world RPG with quests and character builds."], ["Hades", "Action", "Combat", "4", "Low", "Fast roguelike combat with a strong story."], ["Stardew Valley", "Indie", "Exploration", "4", "Low", "Relaxed farming, exploration and co-op."], ["Terraria", "Indie", "Exploration, Combat", "4", "Low", "Sandbox exploration, building and combat."], ["Left 4 Dead 2", "Multiplayer", "Co-op, Combat", "4", "Low", "Classic four-player co-op zombie action."], ["Helldivers 2", "Multiplayer", "Co-op, Combat", "16", "Mid", "Chaotic cooperative missions for squads."], ["Resident Evil 4", "Horror", "Story, Combat", "8", "Mid", "Survival horror mixed with action combat."], ["Baldur's Gate 3", "RPG", "Story, Exploration", "16", "Mid", "Choice-heavy RPG with turn-based combat."], ["The Witcher 3", "RPG", "Story, Exploration", "8", "Mid", "Large open world and story-driven quests."], ["Forza Horizon 5", "Racing", "Exploration, Multiplayer", "16", "Mid", "Open-world racing with a huge car roster."], ["Valorant", "Multiplayer", "Combat", "4", "Low", "Competitive tactical shooter with low hardware demands."], ["Counter-Strike 2", "Multiplayer", "Combat", "8", "Low", "Competitive tactical FPS."], ["Fortnite", "Multiplayer", "Combat", "8", "Low", "Battle royale with scalable graphics settings."], ["Minecraft", "Indie", "Exploration", "4", "Low", "Sandbox building and exploration."], ["God of War", "Action", "Story, Combat", "8", "High", "Cinematic action adventure."], ["Hogwarts Legacy", "RPG", "Story, Exploration", "16", "High", "Open-world action RPG in the Wizarding World."], ["Black Myth: Wukong", "Action", "Combat, Exploration", "16", "High", "Visually demanding action RPG."], ["Grand Theft Auto V", "Action", "Story, Exploration", "8", "Mid", "Open-world action with a large modding community."], ["Death Stranding", "Action", "Exploration", "8", "Mid", "Atmospheric traversal and story."], ["Control", "Action", "Story, Combat", "8", "Mid", "Supernatural action with demanding visuals."], ["Doom Eternal", "Action", "Combat", "8", "Mid", "Very fast single-player FPS combat."], ["Hollow Knight", "Indie", "Combat, Exploration", "4", "Low", "Exploration-heavy metroidvania."], ["Ori and the Will of the Wisps", "Indie", "Exploration", "8", "Low", "Beautiful platforming and exploration."], ["Subnautica", "Indie", "Exploration", "8", "Mid", "Underwater survival and exploration."], ["Sea of Thieves", "Multiplayer", "Co-op, Exploration", "8", "Mid", "Open-ended pirate adventure with friends."], ["Apex Legends", "Multiplayer", "Combat", "8", "Mid", "Fast competitive battle royale."], ["Overwatch 2", "Multiplayer", "Combat", "8", "Low", "Hero shooter with team-based matches."], ["Palworld", "Multiplayer", "Exploration, Co-op", "16", "Mid", "Survival crafting with creature collecting."], ["Lies of P", "RPG", "Combat", "16", "High", "Soulslike combat and a dark story."], ["Sekiro", "Action", "Combat", "8", "Mid", "Precision-focused sword combat."], ["Monster Hunter World", "RPG", "Combat, Co-op", "8", "Mid", "Large-monster hunts with deep gear progression."], ["Monster Hunter Wilds", "RPG", "Combat, Co-op", "16", "High", "Modern monster hunting with demanding visuals."], ["Assassin's Creed Odyssey", "Action", "Story, Exploration", "8", "Mid", "Large historical open-world RPG."], ["Far Cry 5", "Action", "Story, Exploration", "8", "Mid", "Open-world shooter with co-op."], ["DOOM", "Action", "Combat", "8", "Mid", "Fast-paced demon-slaying FPS."], ["Dead Space", "Horror", "Story, Combat", "16", "High", "Atmospheric survival horror."], ["Alan Wake 2", "Horror", "Story", "16", "High", "Cinematic psychological horror."], ["Detroit: Become Human", "Story", "Story, Exploration", "8", "Mid", "Choice-driven cinematic adventure."]];const HARDWARE=[["Ryzen 5 5500", "CPU", "6-core AM4 gaming CPU", "1080p value"], ["Ryzen 5 5600", "CPU", "6-core AM4 gaming CPU", "1080p / 1440p value"], ["Ryzen 5 7600", "CPU", "6-core AM5 gaming CPU", "Modern mid-range"], ["Ryzen 7 7800X3D", "CPU", "8-core gaming CPU with 3D V-Cache", "High-end gaming"], ["Core i5-12400F", "CPU", "6-core value CPU", "1080p / budget"], ["Core i5-14400F", "CPU", "10-core hybrid CPU", "Mid-range gaming/work"], ["RX 6600", "GPU", "8GB 1080p GPU", "1080p"], ["RTX 4060", "GPU", "8GB efficient 1080p GPU", "1080p"], ["RX 7600", "GPU", "8GB 1080p GPU", "1080p"], ["RTX 4070 SUPER", "GPU", "12GB 1440p GPU", "1440p"], ["RTX 5070", "GPU", "12GB modern 1440p GPU", "1440p / high-end"], ["RX 7800 XT", "GPU", "16GB 1440p GPU", "1440p"], ["RX 9070 XT", "GPU", "16GB high-performance GPU", "1440p / 4K"], ["16GB DDR4", "RAM", "2x8GB memory kit", "Budget gaming"], ["32GB DDR4", "RAM", "2x16GB memory kit", "Modern gaming"], ["32GB DDR5", "RAM", "2x16GB modern memory kit", "AM5 / modern builds"], ["1TB NVMe SSD", "Storage", "Fast solid-state storage", "General"], ["2TB NVMe SSD", "Storage", "Large fast solid-state storage", "Large game libraries"]];const BUILDS=[["₹35K", "1080p Value", "Ryzen 5 5500", "RX 6600", "16GB DDR4", "B450/B550", "500GB NVMe", "550W Bronze"], ["₹50K", "1080p Sweet Spot", "Ryzen 5 5600", "RTX 4060 / RX 7600", "16GB DDR4", "B550", "1TB NVMe", "550–650W Bronze"], ["₹65K", "1080p High-FPS", "Ryzen 5 7600", "RX 7700 XT / RTX 4060 Ti", "32GB DDR5", "B650", "1TB NVMe", "650–750W Bronze/Gold"], ["₹80K", "1440p Performance", "Ryzen 5 7600", "RTX 4070 / RX 7800 XT", "32GB DDR5", "B650", "1TB NVMe", "650–750W Gold"], ["₹1L", "1440p High-End", "Ryzen 7 7800X3D", "RTX 4070 SUPER / RX 7900 GRE", "32GB DDR5", "B650", "1–2TB NVMe", "750W Gold"], ["₹1.3L+", "4K Ready", "Ryzen 7 7800X3D", "RTX 5070 / RX 9070 XT", "32GB DDR5", "B650", "2TB NVMe", "750–850W Gold"]];</script>
 <script src="script.js"></script>
 </body></html>
